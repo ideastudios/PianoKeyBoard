@@ -6,7 +6,6 @@ import android.graphics.PointF;
 import android.text.TextPaint;
 
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class WhiteKey extends Key {
         super(left, top, right, bottom);
     }
 
-    public static List<WhiteKey> generatorWhiteKey(float whiteKeyWidth, float whiteKeyHeight, Bitmap unPressedBitmap, Bitmap pressedBitmap, TextPaint whiteTextPaint) {
+    public static List<WhiteKey> generatorWhiteKey(float whiteKeyWidth, float whiteKeyHeight, Bitmap unPressedBitmap, Bitmap pressedBitmap, TextPaint whiteTextPaint, float textYCoordinate) {
         ArrayList<WhiteKey> list = new ArrayList<>();
         Paint whitePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         whitePaint.setFilterBitmap(true);
@@ -39,7 +38,7 @@ public class WhiteKey extends Key {
             whiteKey.setUnPressedBitmap(unPressedBitmap);
             whiteKey.setPressedBitmap(pressedBitmap);
             whiteKey.setTextPaint(whiteTextPaint);
-            whiteKey.setDrawTextCoordinate(i * whiteKeyWidth + whiteKeyWidth / 2, whiteKeyHeight - 80);
+            whiteKey.setDrawTextCoordinate(i * whiteKeyWidth + whiteKeyWidth / 2, textYCoordinate);
             whiteKey.setTextToDraw(Const.RANGE[i]);
             whiteKey.setKeyCode(Const.WHITEKEY_CODE[i]);
             list.add(whiteKey);

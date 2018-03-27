@@ -1,14 +1,34 @@
 <resources>
     <declare-styleable name="PianoKeyBoard">
+        <!--设置白键被按下去时的BitmapDrawable-->
         <attr name="whiteKeyPressedDrawable" format="reference" />
+
+        <!--白键默认的Drawable-->
         <attr name="whiteKeyDrawable" format="reference" />
+
+        <!--设置黑键被按下去时的BitmapDrawable-->
         <attr name="blackKeyPressedDrawable" format="reference" />
+
+        <!--黑键默认的BitmapDrawable-->
         <attr name="blackKeyDrawable" format="reference" />
+
+        <!--设置一屏/一页 展示的白键的个数-->
         <attr name="keyCount" format="integer" />
+
+        <!--黑键占整个键盘高度的比-->
         <attr name="blackKeyHeightRatio" format="float" />
+
+        <!--黑键的宽度 黑键宽度和白键宽度的比-->
         <attr name="blackKeyWidthRatioToWhiteKeyWidth" format="float" />
-        <attr name="pronuncTextRation" format="float" />
+
+        <!--设置白键上字体的高度占白键高度的比-->
+        <attr name="pronuncTextYRatio" format="float" />
+
+        <!--设置白键上字体的大小-->
         <attr name="pronuncTextSize" format="dimension" />
+
+        <!--设置白键上字体的颜色-->
         <attr name="pronuncTextColor" format="color" />
+
     </declare-styleable>
 </resources>

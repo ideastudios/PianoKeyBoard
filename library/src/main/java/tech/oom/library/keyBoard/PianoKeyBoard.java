@@ -45,6 +45,7 @@ public class PianoKeyBoard extends View {
     private BitmapDrawable blackKeyPressedDrawable;
     private TextPaint pronuncTextPaint;
     private float blackKeyHeightRatio = 0.5f;
+    private float pronuncTextYRatio = 0.9f;
     private int min_size = 700;
     private float blackKeyWidthRatioToWhiteKeyWidth = 0.8f;
     private KeyListener keyListener;
@@ -66,11 +67,6 @@ public class PianoKeyBoard extends View {
         init(attrs, defStyle);
     }
 
-    public void setKeyCount(int keyCount) {
-        this.keyCount = keyCount;
-        initKeys();
-    }
-
 
     private void init(AttributeSet attrs, int defStyle) {
         final TypedArray a = getContext().obtainStyledAttributes(
@@ -87,6 +83,7 @@ public class PianoKeyBoard extends View {
         keyCount = a.getInt(R.styleable.PianoKeyBoard_keyCount, keyCount);
 
         blackKeyHeightRatio = a.getFloat(R.styleable.PianoKeyBoard_blackKeyHeightRatio, blackKeyHeightRatio);
+        pronuncTextYRatio = a.getFloat(R.styleable.PianoKeyBoard_pronuncTextYRatio, pronuncTextYRatio);
 
         blackKeyWidthRatioToWhiteKeyWidth = a.getFloat(R.styleable.PianoKeyBoard_blackKeyWidthRatioToWhiteKeyWidth, blackKeyWidthRatioToWhiteKeyWidth);
 
@@ -254,7 +251,7 @@ public class PianoKeyBoard extends View {
         keyBoardContentWidth = whiteKeyWidth * Const.PRONUNCIATION.length;
 //        xOffset = -(keyBoardContentWidth - keyBoardWidth) / 2;
 //        xOffset = -(keyBoardContentWidth - keyBoardWidth) / 2;
-        list.addAll(WhiteKey.generatorWhiteKey(whiteKeyWidth, keyBoardHeight, whiteKeyDrawable.getBitmap(), whiteKeyPressedDrawable.getBitmap(), pronuncTextPaint));
+        list.addAll(WhiteKey.generatorWhiteKey(whiteKeyWidth, keyBoardHeight, whiteKeyDrawable.getBitmap(), whiteKeyPressedDrawable.getBitmap(), pronuncTextPaint, whiteKeyHeight * pronuncTextYRatio));
         list.addAll(BlackKey.generatorBlackKey(whiteKeyWidth, blackKeyWidth, blackKeyHeight, blackKeyDrawable.getBitmap(), blackKeyPressedDrawable.getBitmap()));
 //        pointerInWhichKey(xOffset,0);
         reverseList.clear();
@@ -289,6 +286,17 @@ public class PianoKeyBoard extends View {
     public void setKeyListener(KeyListener listener) {
         this.keyListener = listener;
     }
+
+    /**
+     * 设置一屏/一页 展示的白键的个数
+     *
+     * @param keyCount 白键个数
+     */
+    public void setKeyCount(int keyCount) {
+        this.keyCount = keyCount;
+        initKeys();
+    }
+
 
     /**
      * 设置是否播放音效

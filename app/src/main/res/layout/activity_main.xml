@@ -50,6 +50,7 @@
         app:keyCount="12"
         app:pronuncTextColor="#000000"
         app:pronuncTextSize="12sp"
+        app:pronuncTextYRatio="0.9"
         app:whiteKeyDrawable="@drawable/white_up"
         app:whiteKeyPressedDrawable="@drawable/white_down" />
 
