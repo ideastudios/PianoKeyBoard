@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="上一页"
+            android:textSize="12sp" />
+
+        <SeekBar
+            android:id="@+id/activity_play_seek_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:maxHeight="4dp"
+            android:minHeight="4dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:text="下一页" />
+    </LinearLayout>
+
+
+    <tech.oom.library.keyBoard.PianoKeyBoard
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ccc"
+        app:blackKeyDrawable="@drawable/black_up"
+        app:blackKeyPressedDrawable="@drawable/black_down"
+        app:keyCount="12"
+        app:pronuncTextColor="#000000"
+        app:pronuncTextSize="12sp"
+        app:whiteKeyDrawable="@drawable/white_up"
+        app:whiteKeyPressedDrawable="@drawable/white_down" />
+
+
+</LinearLayout>
+
+

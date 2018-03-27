@@ -1,0 +1,14 @@
+<resources>
+    <declare-styleable name="PianoKeyBoard">
+        <attr name="whiteKeyPressedDrawable" format="reference" />
+        <attr name="whiteKeyDrawable" format="reference" />
+        <attr name="blackKeyPressedDrawable" format="reference" />
+        <attr name="blackKeyDrawable" format="reference" />
+        <attr name="keyCount" format="integer" />
+        <attr name="blackKeyHeightRatio" format="float" />
+        <attr name="blackKeyWidthRatioToWhiteKeyWidth" format="float" />
+        <attr name="pronuncTextRation" format="float" />
+        <attr name="pronuncTextSize" format="dimension" />
+        <attr name="pronuncTextColor" format="color" />
+    </declare-styleable>
+</resources>
