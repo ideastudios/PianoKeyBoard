@@ -131,7 +131,8 @@
 
 
 # Gradle
-[![](https://jitpack.io/v/ideastudios/LuckView.svg)](https://jitpack.io/#ideastudios/LuckView)
+[![](https://jitpack.io/v/ideastudios/PianoKeyBoard.svg)](https://jitpack.io/#ideastudios/PianoKeyBoard)
+
 
 1. Add it in your root build.gradle at the end of repositories:
 ```
@@ -145,7 +146,7 @@
 2. Add the dependency
 ```
 	dependencies {
-	        compile 'com.github.ideastudios:LuckView:0.0.1'
+	         compile 'com.github.ideastudios:PianoKeyBoard:1.1.1'
 	}
 
 ```
