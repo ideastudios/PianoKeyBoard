@@ -11,7 +11,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;

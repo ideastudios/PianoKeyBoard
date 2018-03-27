@@ -8,8 +8,7 @@ import tech.oom.library.R;
 
 
 /**
- * @author zsl
- * @blog http://blog.csdn.net/yy1300326388
+ *
  */
 public class SoundPlayUtils {
     // SoundPool对象

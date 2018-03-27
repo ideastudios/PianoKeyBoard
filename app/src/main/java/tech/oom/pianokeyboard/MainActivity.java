@@ -13,19 +13,23 @@ import tech.oom.library.sound.SoundPlayUtils;
 public class MainActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private PianoKeyBoard keyBoard;
+    /**
+     * 按键的listener
+     */
     PianoKeyBoard.KeyListener listener = new PianoKeyBoard.KeyListener() {
         @Override
         public void onKeyPressed(Key key) {
-
+//某个键被按下的回调
         }
 
         @Override
         public void onKeyUp(Key key) {
-
+//某个键被松开的回调
         }
 
         @Override
         public void currentFirstKeyPosition(int position) {
+//            键盘显示的第一个键的index/position更新回调
             seekBar.setMax(keyBoard.getMaxMovePosition());
             seekBar.setProgress(position);
         }

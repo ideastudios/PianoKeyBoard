@@ -1,4 +1,5 @@
 # PianoKeyBoard
+自定义的钢琴键盘 从A0 - C8 一共88个键 支持多点触控和多点滑动(如果与系统手势快捷方式冲突则不支持 比如miui (三指下拉截屏) 不支持三指及以上滑动) 支持键盘移动
 
 # 效果图
 <img src="/screenshots/screenshot.gif"/>
@@ -53,6 +54,81 @@
         app:whiteKeyPressedDrawable="@drawable/white_down" />
 ```
 
+# 回调
+```java
+     /**
+      * 键盘的监听
+      */
+     public interface KeyListener {
+
+         /**
+          * 键盘被按下的回调
+          *
+          * @param key 被按下的键
+          */
+         void onKeyPressed(Key key);
+
+         /**
+          * 键盘被按松开的回调
+          *
+          * @param key 被松开的键
+          */
+         void onKeyUp(Key key);
+
+         /**
+          * 键盘显示的第一个键的index/position
+          *
+          * @param position 键盘显示的第一个键的index/position
+          */
+         void currentFirstKeyPosition(int position);
+     }
+
+```
+
+# 代码配置
+```java
+    /**
+     * 设置是否播放音效
+     */
+    public void setIsPlaySound(boolean isPlaySound) {
+
+    }
+
+    /**
+     * 根据黑/白键的code 获取黑/白键 code从21-108 和midi键盘对应
+     */
+    public Key getKeyByKeycode(int code) {
+
+    }
+
+    /**
+     * 移动键盘到当前位置 即键盘显示的第一个白键为当前位置 默认为0 即第一个显示的白键为A0
+     */
+    public void moveToPosition(int position) {
+    }
+
+    /**
+     * 以当前显示位置为基准，显示键盘的下一页/屏键位
+     */
+    public void showNext() {
+
+    }
+
+    /**
+     * 以当前显示位置为基准，显示键盘的上一页/屏键位
+     */
+    public void showPrevious() {
+
+    }
+
+    /**还有各种设置xml中属性的方法set×××() ……*/
+
+```
+
+# 键盘音效
+键盘音效是以手机的音乐音量大小播放的(AudioManager.STREAM_MUSIC)，如果需要播放音效，需要在Activity 创建时调用 SoundPlayUtils.init(context);
+
+
 
 # Gradle
 [![](https://jitpack.io/v/ideastudios/LuckView.svg)](https://jitpack.io/#ideastudios/LuckView)
@@ -74,12 +150,7 @@
 
 ```
 
-# 注意
-* LuckView属性中，只有奖品图片的偏移量 和 文字的偏移量 是相对于圆盘半径的，其他的相关属性都是相对于圆盘的直径
-* LuckView中奖项的数量大小应该设置为可以能被360整除的数，如果不能被360整除，则会出现相应bug
-* LuckView draw不同奖项图片 draw不同奖项名称是通过canvas.rotate(sectorAnger)的方式实现的
 
 
-
-# 感谢
-该工程参考了[Nipuream/LuckPan](https://github.com/Nipuream/LuckPan) 的相关代码和UI,感谢这位小伙伴
+# 说明
+* 此工程中的钢琴按键音音频文件和黑白键的背景图片来自互联网
